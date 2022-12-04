@@ -1,0 +1,45 @@
+<div class="card m-3">
+    <div class="card-body">
+        <div class="form-group form-inline text-left">
+            <label class="mr-4" for="">title</label>
+            <input type="text" class="form-control col-10" #title>
+
+        </div>
+        <div class="form-group form-inline text-left">
+            <label class="mr-4" for="">body</label>
+            <input type="text" class="form-control col-10" #body>
+
+        </div>
+
+        <button class="btn btn-block btn-primary" (click)="agregar({userId:'10',title:title.value,body:body.value})">enviar</button>
+    </div>
+
+</div>
+<hr>
+<h3>binding</h3>
+<form #Form="ngForm" (ngSubmit)="Test()">
+
+
+    <button type="submit">enviar 2</button>
+</form>
+
+
+
+
+
+<div class="card animated fadein fast cuadrar" *ngFor="let item of Tpersonas">
+
+    <!-- otra forma de hacer interpolacion con el src  -->
+
+    <div class="card-body">
+        <h4 class="card-title">{{item.userId}}</h4>
+        <p class="card-text">{{item.id}}</p>
+        <p class="card-text"><small class="text-muted">{{item.title}}</small></p>
+        <p class="card-text"><small class="text-muted">{{item.body}}</small></p>
+
+
+    </div>
+
+
+
+</div>

@@ -1,0 +1,12 @@
+.cuadrar {
+    height: 700px;
+}
+
+.probar {
+    text-align: center;
+    vertical-align: bottom;
+    height: 10%;
+    width: 90%;
+    bottom: 0px;
+    position: absolute;
+}
