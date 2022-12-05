@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiserviceService } from 'src/app/Services/apiservice.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-personas',
@@ -9,16 +10,16 @@ import { ApiserviceService } from 'src/app/Services/apiservice.service';
 export class PersonasComponent implements OnInit {
 
   Tpersonas: any = [];
-  
+
+
+  // Modelo
+  MiPersona ={
+    "userId": "",
+    "title": "",
+    "body": ""
+  }
 
    
-  
-  //mipersona = {
-   // "userId": 111111,
-    
-   // "title": "asdasd",
-   // "body": "xxx"
- // }
   constructor(private _apiser:ApiserviceService) { }
 
   ngOnInit(): void{
@@ -38,8 +39,9 @@ export class PersonasComponent implements OnInit {
  
    }
 
-   agregar(persona:any){
-    this._apiser.agregar(persona).subscribe(data=>{
+   agregar(){
+    console.log(this.MiPersona)
+    this._apiser.agregar(this.MiPersona).subscribe(data=>{
 
       console.log(data)
     })

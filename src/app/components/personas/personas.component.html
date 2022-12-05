@@ -1,4 +1,4 @@
-<div class="card m-3">
+<!-- <div class="card m-3">
     <div class="card-body">
         <div class="form-group form-inline text-left">
             <label class="mr-4" for="">title</label>
@@ -14,13 +14,32 @@
         <button class="btn btn-block btn-primary" (click)="agregar({userId:'10',title:title.value,body:body.value})">enviar</button>
     </div>
 
-</div>
+</div> -->
 <hr>
 <h3>binding</h3>
-<form #Form="ngForm" (ngSubmit)="Test()">
+<div class="col-6 offset-3">
+    <p>Userid {{MiPersona.userId}}</p>
+    <p>Tittle {{MiPersona.title}}</p>
+    <p>Body {{MiPersona.body}}</p>
 
+</div>
+<form #Form="ngForm" class="col-6 offset-3" (ngSubmit)="agregar()">
 
-    <button type="submit">enviar 2</button>
+    <div class="form-group">
+        <label class="mr-4" for="">UserId::</label>
+        <input type="text" [(ngModel)]="MiPersona.userId" name="userId" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label class="mr-4" for="">title:</label>
+        <input type="text" [(ngModel)]="MiPersona.title" name="title" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label class="mr-4" for="">body:</label>
+        <input type="text" [(ngModel)]="MiPersona.body" name="body" class="form-control">
+    </div>
+
+    <button class="btn btn-danger btn-block" type="submit" [disabled]="!Form.valid">enviar 2</button>
 </form>
 
 
